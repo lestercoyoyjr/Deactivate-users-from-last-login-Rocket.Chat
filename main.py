@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 from difference_days import difference_days
 from deactivate_user import deactivate_user
+from username import username_get
 
 def main():
     load_dotenv()
@@ -25,9 +26,7 @@ def main():
     response = requests.get(url, headers=headers, params=query_params)
 
     if response.status_code == 200:
-        data = response.json()
-        last_login = data.get('user', {}).get('lastLogin')
-        username = data.get('user', {}).get('username')
+        last_login, username = username_get(response)
 
         # Calculate the current date
         days_difference = difference_days(last_login)
