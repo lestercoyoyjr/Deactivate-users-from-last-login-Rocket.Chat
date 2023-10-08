@@ -10,9 +10,6 @@ def get_user_data(users_data):
         user_id = user.get('_id')
         user_name = user.get('name')
         user_data_dict[user_id] = user_name
-    
-    # Check dict result
-    # ic(user_data_dict)
 
     return user_data_dict # Return the list of user data
 
@@ -34,8 +31,10 @@ def users_list():
         ic(data)
 
         # Extract 'id' values from the 'users' list
-        users_data = data.get('users', [])
-        get_user_data(users_data)
+        usersData = data.get('users', [])
+        user_data_dict = get_user_data(usersData)
+        # Check Dictionary result
+        # ic(user_data_dict)
     else:
         print("Failed to retrieve data. Status code:", response.status_code)
         print(response.text)
