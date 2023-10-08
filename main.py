@@ -4,27 +4,8 @@ import requests
 import os
 from dotenv import load_dotenv
 from datetime import datetime
-
-def difference_days(last_login):
-    current_date = datetime.utcnow()
-    last_login_date = datetime.strptime(last_login, '%Y-%m-%dT%H:%M:%S.%fZ')
-    days_difference = (current_date - last_login_date).days
-    return days_difference
-
-def deactivate_user(headers, payload, username):
-    url = "http://localhost:3000/api/v1/users.setActiveStatus"
-    response = requests.post(url, headers=headers, json=payload)
-    
-    if response.status_code == 200:
-        data = response.json()
-        if data.get('success'):
-            user = data.get('user')
-            print("The user " + username + " has been deactivated.")
-        else:
-            print("Failed to set user status")
-    else:
-        print("Failed to deactivate user. Status code:", response.status_code)
-        print(response.text)
+from difference_days import difference_days
+from deactivate_user import deactivate_user
 
 def main():
     load_dotenv()
