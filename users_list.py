@@ -35,6 +35,7 @@ def users_list():
         user_data_dict = get_user_data(usersData)
         # Check Dictionary result
         # ic(user_data_dict)
+        return user_data_dict
     else:
         print("Failed to retrieve data. Status code:", response.status_code)
         print(response.text)
