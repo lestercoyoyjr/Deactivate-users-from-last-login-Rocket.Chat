@@ -35,11 +35,12 @@ def users_list():
         usersData = data.get('users', [])
         user_data_dict = get_user_data(usersData)
         # Check Dictionary result
-        # ic(user_data_dict)
+        ic(user_data_dict)
         return user_data_dict
     else:
         print("Failed to retrieve data. Status code:", response.status_code)
         print(response.text)
 
-if __name__ == "__main__":
-    users_list()
+# Test if it works
+#if __name__ == "__main__":
+#    users_list()
