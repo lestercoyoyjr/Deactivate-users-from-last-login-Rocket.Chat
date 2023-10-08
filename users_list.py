@@ -28,7 +28,8 @@ def users_list():
 
     if response.status_code == 200:
         data = response.json()
-        ic(data)
+        # Check data
+        # ic(data)
 
         # Extract 'id' values from the 'users' list
         usersData = data.get('users', [])
