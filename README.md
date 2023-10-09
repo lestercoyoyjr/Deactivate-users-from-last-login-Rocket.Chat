@@ -51,4 +51,10 @@ If pressing yes, it will deactivate user, otherwise, it won't:
 ![Alt text](images/image-9.png)
 ![Alt text](images/image-10.png)
 
+**REMARK**
+Don't forget to create the `.env` file which will have the values:
+
+X-Auth-Token= '#value'
+X-User-Id= '#value'
+
 Hope it helps :rocket:
