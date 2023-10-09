@@ -58,7 +58,7 @@ while user_data_dict:
                 # Add the deactivated user to the dictionary
                 deactivated_users[user_id] = username, last_login
             else:
-                print("The user " + username + " will not be deactivated.")
+                print("The user " + username + " will not be deactivated.\n\n")
         else:
             print("\n\nIMPORTANT: The user " + username + " last login is not older than 30 days.\n\n")
     else:
