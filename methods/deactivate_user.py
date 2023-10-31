@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 def deactivate_user(headers, payload, username):
-    url = "http://localhost:3000/api/v1/users.setActiveStatus"
+    url = os.getenv("URL")+"/api/v1/users.setActiveStatus"
     response = requests.post(url, headers=headers, json=payload)
     
     if response.status_code == 200:

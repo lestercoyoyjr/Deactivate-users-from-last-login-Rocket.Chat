@@ -16,7 +16,7 @@ def get_user_data(users_data):
 def users_list():
     load_dotenv()
 
-    url = "http://localhost:3000/api/v1/users.list"
+    url = os.getenv("URL")+"/api/v1/users.list"
 
     headers = {
         "X-Auth-Token": os.getenv("X-Auth-Token"),
